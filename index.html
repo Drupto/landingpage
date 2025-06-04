@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1830067126025185"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <meta name="robots" content="index, follow">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ0H8L73CR"></script>
@@ -14,98 +14,134 @@
   gtag('config', 'G-PZ0H8L73CR');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Drupto</title>
     <link rel="shortcut icon" type="image/x-icon" href="Assets/favicon-Drupto.ico">
     
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-            width: 100%;
-        }
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(to bottom right, #1e3a8a, #1e40af);
-            overflow: hidden;
-        }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.8;
-        }
-        .content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            color: white;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        h1 {
-            font-size: 2.25rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-        p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 42rem;
-        }
-        .button-link {
-            text-decoration: none;
-        }
-        button {
-            padding: 0.75rem 2rem;
-            background-color: white;
-            color: #1e3a8a;
-            border: none;
-            border-radius: 9999px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        .social-links {
-            position: absolute;
-            bottom: 1rem;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: opacity 0.3s;
-        }
-        .social-links a:hover {
-            opacity: 0.7;
-        }
+       html, body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          height: 100%;
+          width: 100%;
+          box-sizing: border-box;
+       }
+       .container {
+          position: relative;
+          width: 100vw;
+          height: 100vh;
+          min-height: 100dvh;
+          background: linear-gradient(to bottom right, #1e3a8a, #1e40af);
+          overflow: hidden;
+       }
+       canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          min-height: 100dvh;
+          opacity: 0.8;
+          pointer-events: none;
+       }
+       .content {
+          position: relative;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
+          min-height: 100dvh;
+          color: white;
+          text-align: center;
+          padding: 0 1rem;
+          box-sizing: border-box;
+       }
+       h1 {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1.2rem;
+          word-break: break-word;
+       }
+       p {
+          font-size: 1.05rem;
+          margin-bottom: 1.2rem;
+          max-width: 95vw;
+          word-break: break-word;
+       }
+       .button-link {
+          text-decoration: none;
+          width: 100%;
+          max-width: 320px;
+       }
+       button {
+          width: 100%;
+          padding: 0.75rem 2rem;
+          background-color: white;
+          color: #1e3a8a;
+          border: none;
+          border-radius: 9999px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          font-size: 1rem;
+       }
+       button:hover, button:focus {
+          background-color: rgba(255, 255, 255, 0.9);
+          outline: none;
+       }
+       .social-links {
+          position: static;
+          margin-top: 2rem;
+          display: flex;
+          justify-content: center;
+          gap: 1.2rem;
+       }
+       .social-links a {
+          color: white;
+          font-size: 1.7rem;
+          transition: opacity 0.3s;
+       }
+       .social-links a:hover, .social-links a:focus {
+          opacity: 0.7;
+          outline: none;
+       }
 
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 3.75rem;
-            }
-            p {
-                font-size: 1.5rem;
-            }
-        }
+       @media (min-width: 480px) {
+          h1 {
+             font-size: 2.5rem;
+          }
+          p {
+             font-size: 1.2rem;
+             max-width: 30rem;
+          }
+          .button-link {
+             max-width: 240px;
+          }
+       }
+
+       @media (min-width: 768px) {
+          h1 {
+             font-size: 3.75rem;
+          }
+          p {
+             font-size: 1.5rem;
+             max-width: 42rem;
+          }
+          .button-link {
+             max-width: 320px;
+          }
+          .social-links {
+             position: absolute;
+             bottom: 1rem;
+             left: 0;
+             right: 0;
+             margin-top: 0;
+          }
+       }
     </style>
 </head>
 <body>
@@ -114,102 +150,115 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <canvas id="networkCanvas" aria-hidden="true"></canvas>
-        <div class="content">
-            <h1>Welcome to Drupto</h1>
-            <p>Experience digital innovation with our cutting-edge solutions.</p>
-            <p>See You Soon!</p>
-            <a href="mailto:contact@drupto.com" class="button-link">
-                <button>Contact Us</button>
-            </a>
-            <div class="social-links">
-                <a href="https://www.instagram.com/drupto_/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61568374823553" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </a>
-            </div>
-        </div>
+       <canvas id="networkCanvas" aria-hidden="true"></canvas>
+       <div class="content">
+          <h1>Welcome to Drupto</h1>
+          <p>Experience digital innovation with our cutting-edge solutions.</p>
+          <p>See You Soon!</p>
+          <a href="mailto:contact@drupto.com" class="button-link">
+             <button>Contact Us</button>
+          </a>
+          <div class="social-links">
+             <a href="https://www.instagram.com/drupto_/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+             </a>
+             <a href="https://www.facebook.com/profile.php?id=61568374823553" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+             </a>
+          </div>
+       </div>
     </div>
 
     <script>
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
+       const canvas = document.getElementById('networkCanvas');
+       const ctx = canvas.getContext('2d');
 
-        // Set canvas size to match window size
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+       function resizeCanvas() {
+          // Use devicePixelRatio for crispness on mobile
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = window.innerWidth * dpr;
+          canvas.height = window.innerHeight * dpr;
+          canvas.style.width = window.innerWidth + "px";
+          canvas.style.height = window.innerHeight + "px";
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+          ctx.scale(dpr, dpr);
+       }
+       resizeCanvas();
+       window.addEventListener('resize', resizeCanvas);
 
-        // Particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = 2;
-            }
+       class Particle {
+          constructor() {
+             this.x = Math.random() * window.innerWidth;
+             this.y = Math.random() * window.innerHeight;
+             this.vx = (Math.random() - 0.5) * 0.5;
+             this.vy = (Math.random() - 0.5) * 0.5;
+             this.size = 2;
+          }
 
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
+          update() {
+             this.x += this.vx;
+             this.y += this.vy;
 
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
+             if (this.x < 0 || this.x > window.innerWidth) this.vx *= -1;
+             if (this.y < 0 || this.y > window.innerHeight) this.vy *= -1;
+          }
 
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.fill();
-            }
-        }
+          draw() {
+             ctx.beginPath();
+             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+             ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+             ctx.fill();
+          }
+       }
 
-        // Create particles
-        const particles = [];
-        const particleCount = 100;
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
+       // Adjust particle count for mobile
+       function getParticleCount() {
+          if (window.innerWidth < 480) return 40;
+          if (window.innerWidth < 768) return 60;
+          return 100;
+       }
 
-        // Animation function
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+       let particles = [];
+       function createParticles() {
+          particles = [];
+          const particleCount = getParticleCount();
+          for (let i = 0; i < particleCount; i++) {
+             particles.push(new Particle());
+          }
+       }
+       createParticles();
+       window.addEventListener('resize', () => {
+          createParticles();
+       });
 
-            // Update and draw particles
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
+       function animate() {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-            // Draw connections
-            particles.forEach((p1, i) => {
-                particles.slice(i + 1).forEach(p2 => {
-                    const dx = p1.x - p2.x;
-                    const dy = p1.y - p2.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+          particles.forEach(particle => {
+             particle.update();
+             particle.draw();
+          });
 
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.moveTo(p1.x, p1.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 150)})`;
-                        ctx.stroke();
-                    }
-                });
-            });
+          particles.forEach((p1, i) => {
+             particles.slice(i + 1).forEach(p2 => {
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
 
-            requestAnimationFrame(animate);
-        }
+                if (distance < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 150)})`;
+                    ctx.stroke();
+                }
+             });
+          });
 
-        // Start animation
-        animate();
+          requestAnimationFrame(animate);
+       }
+
+       animate();
     </script>
 </body>
 </html>
